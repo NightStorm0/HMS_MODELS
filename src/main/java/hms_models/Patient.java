@@ -25,6 +25,7 @@ public class Patient {
     private String nextOfKin;
     private String nokContact;
     private String nokRelationship;
+    private String cardType;
     private String cardId;
     private String createdAt;
 
@@ -35,7 +36,7 @@ public class Patient {
                    String dob, String sex, String address, String pPhoneNumber,
                    String sPhoneNumber, String email, String tribe, String religion,
                    String occupation, String nextOfKin, String nokContact,
-                   String nokRelationship, String cardId) {
+                   String nokRelationship,String cardType, String cardId) {
         this.patientId = patientId;
         this.lName = lName;
         this.fName = fName;
@@ -52,6 +53,7 @@ public class Patient {
         this.nextOfKin = nextOfKin;
         this.nokContact = nokContact;
         this.nokRelationship = nokRelationship;
+        this.cardType = cardType;
         this.cardId = cardId;
     }
 
@@ -200,6 +202,14 @@ public class Patient {
         this.cardId = cardId;
     }
 
+    public String getCardType() {
+        return cardType;
+    }
+
+    public void setCardType(String cardType) {
+        this.cardType = cardType;
+    }
+
     public String getCreatedAt() {
         return createdAt;
     }
@@ -228,6 +238,7 @@ public class Patient {
                 ", nextOfKin='" + nextOfKin + '\'' +
                 ", nokContact='" + nokContact + '\'' +
                 ", nokRelationship='" + nokRelationship + '\'' +
+                ", cardType='" + cardType + '\'' +
                 ", cardId='" + cardId + '\'' +
                 ", createdAt='" + createdAt + '\'' +
                 '}';

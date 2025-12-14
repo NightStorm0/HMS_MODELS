@@ -1,15 +1,13 @@
 package hms_models;
 
-public  class UserAccount {
+public class UserAccount {
     private int id;
     private String name;
     private String username;
-    private String passwordHash;
     private AccountType type;
     private int accessLevel;
-    private String createdAt;
     private String lastLogin;
-    private boolean active;
+    public static int USER_ID_PLACEHOLDER = -1000;
 
     public enum AccountType {
         ADMIN(5),
@@ -23,20 +21,18 @@ public  class UserAccount {
 
         public final int level;
 
-        AccountType(int lvl) { this.level = lvl; }
+        AccountType(int lvl) {
+            this.level = lvl;
+        }
     }
 
-    public UserAccount(int id, String name, String username, String passwordHash,
-                       AccountType type, String createdAt, String lastLogin, boolean active) {
+    public UserAccount(int id, String name, String username, AccountType type, String lastLogin) {
         this.id = id;
         this.name = name;
         this.username = username;
-        this.passwordHash = passwordHash;
         this.type = type;
         this.accessLevel = type.level;
-        this.createdAt = createdAt;
         this.lastLogin = lastLogin;
-        this.active = active;
     }
 
     // Getters
@@ -52,10 +48,6 @@ public  class UserAccount {
         return username;
     }
 
-    public String getPasswordHash() {
-        return passwordHash;
-    }
-
     public AccountType getType() {
         return type;
     }
@@ -64,16 +56,8 @@ public  class UserAccount {
         return accessLevel;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
     public String getLastLogin() {
         return lastLogin;
-    }
-
-    public boolean isActive() {
-        return active;
     }
 
     // Setters
@@ -89,10 +73,6 @@ public  class UserAccount {
         this.username = username;
     }
 
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
-    }
-
     public void setType(AccountType type) {
         this.type = type;
         this.accessLevel = type.level;
@@ -102,15 +82,7 @@ public  class UserAccount {
         this.accessLevel = accessLevel;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
     public void setLastLogin(String lastLogin) {
         this.lastLogin = lastLogin;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
     }
 }
