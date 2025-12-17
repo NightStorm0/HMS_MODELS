@@ -10,7 +10,7 @@ public class UserAccount {
     public static int USER_ID_PLACEHOLDER = -1000;
 
     public enum AccountType {
-        ADMIN(5),
+        ADMINISTRATOR(5),
         MANAGER(4),
         DOCTOR(3),
         NURSE(2),
@@ -26,13 +26,22 @@ public class UserAccount {
         }
     }
 
-    public UserAccount(int id, String name, String username, AccountType type, String lastLogin) {
+    public UserAccount(int id, String name, String username, String account_type, String lastLogin) {
         this.id = id;
         this.name = name;
         this.username = username;
-        this.type = type;
+        this.type = AccountType.valueOf(account_type);
         this.accessLevel = type.level;
         this.lastLogin = lastLogin;
+    }
+
+    public UserAccount(){
+        this.id = USER_ID_PLACEHOLDER;
+        this.name = "";
+        this.username = "";
+        this.type = AccountType.GUEST;
+        this.accessLevel = 0;
+        this.lastLogin = "";
     }
 
     // Getters
