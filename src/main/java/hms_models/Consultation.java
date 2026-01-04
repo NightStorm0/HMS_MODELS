@@ -8,9 +8,11 @@ public class Consultation {
     private String clinic;
     private String doctorId;
     private String status;
+    private Integer encounterId;
 
     // Constructors
-    public Consultation() {}
+    public Consultation() {
+    }
 
     public Consultation(String patientId, String clinic, String doctorId, String status) {
         this.patientId = patientId;
@@ -74,6 +76,14 @@ public class Consultation {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Integer getEncounterId() {
+        return encounterId;
+    }
+
+    public void setEncounterId(Integer encounterId) {
+        this.encounterId = encounterId;
     }
 
     @Override
