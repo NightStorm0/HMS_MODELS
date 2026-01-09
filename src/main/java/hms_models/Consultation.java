@@ -9,6 +9,7 @@ public class Consultation {
     private String doctorId;
     private String status;
     private Integer encounterId;
+    private Boolean hasVitals;
 
     // Constructors
     public Consultation() {
@@ -84,6 +85,14 @@ public class Consultation {
 
     public void setEncounterId(Integer encounterId) {
         this.encounterId = encounterId;
+    }
+
+    public Boolean getHasVitals() {
+        return hasVitals;
+    }
+
+    public void setHasVitals(Boolean hasVitals) {
+        this.hasVitals = hasVitals;
     }
 
     @Override
