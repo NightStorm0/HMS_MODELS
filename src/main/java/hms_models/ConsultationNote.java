@@ -9,6 +9,7 @@ public class ConsultationNote {
     private String assessment;
     private String plan;
     private String createdAt;
+    private String actionBy;
 
     // Constructors
     public ConsultationNote() {}
@@ -88,6 +89,14 @@ public class ConsultationNote {
         this.createdAt = createdAt;
     }
 
+    public String getActionBy() {
+        return actionBy;
+    }
+
+    public void setActionBy(String actionBy) {
+        this.actionBy = actionBy;
+    }
+
     @Override
     public String toString() {
         return "ConsultationNote{" +
@@ -99,6 +108,7 @@ public class ConsultationNote {
                 ", assessment='" + assessment + '\'' +
                 ", plan='" + plan + '\'' +
                 ", createdAt='" + createdAt + '\'' +
+                ", actionBy='" + actionBy + '\'' +
                 '}';
     }
 }

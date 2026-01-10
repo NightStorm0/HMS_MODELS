@@ -28,6 +28,7 @@ public class Patient {
     private String cardType;
     private String cardId;
     private String createdAt;
+    private String actionBy;
 
     // Constructors
     public Patient() {}
@@ -218,6 +219,14 @@ public class Patient {
         this.createdAt = createdAt;
     }
 
+    public String getActionBy() {
+        return actionBy;
+    }
+
+    public void setActionBy(String actionBy) {
+        this.actionBy = actionBy;
+    }
+
     @Override
     public String toString() {
         return "Patient{" +
@@ -241,6 +250,7 @@ public class Patient {
                 ", cardType='" + cardType + '\'' +
                 ", cardId='" + cardId + '\'' +
                 ", createdAt='" + createdAt + '\'' +
+                ", actionBy='" + actionBy + '\'' +
                 '}';
     }
 }

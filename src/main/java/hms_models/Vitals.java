@@ -10,6 +10,8 @@ public class Vitals {
     private Integer spo2; // Oxygen saturation
     private Double weight;
     private Double height;
+    private String actionBy;
+    private String createdAt;
 
     // Constructors
     public Vitals() {}
@@ -99,6 +101,22 @@ public class Vitals {
         this.height = height;
     }
 
+    public String getActionBy() {
+        return actionBy;
+    }
+
+    public void setActionBy(String actionBy) {
+        this.actionBy = actionBy;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
     @Override
     public String toString() {
         return "Vitals{" +
@@ -111,6 +129,8 @@ public class Vitals {
                 ", spo2=" + spo2 +
                 ", weight=" + weight +
                 ", height=" + height +
+                ", actionBy='" + actionBy + '\'' +
+                ", createdAt='" + createdAt + '\'' +
                 '}';
     }
 }

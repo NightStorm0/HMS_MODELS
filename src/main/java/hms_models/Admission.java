@@ -17,6 +17,7 @@ public class Admission {
     private Integer acuityLevel;
     private String status;              // active, discharged, transferred, deceased
     private String createdAt;
+    private String actionBy;
 
     public Admission() {
     }
@@ -142,5 +143,13 @@ public class Admission {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getActionBy() {
+        return actionBy;
+    }
+
+    public void setActionBy(String actionBy) {
+        this.actionBy = actionBy;
     }
 }
