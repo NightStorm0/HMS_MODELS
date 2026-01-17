@@ -11,6 +11,11 @@ public class Consultation {
     private Integer encounterId;
     private Boolean hasVitals;
 
+    // Transient fields from Joins
+    private String patientName;
+    private String patientDob;
+    private String patientSex;
+
     // Constructors
     public Consultation() {
     }
@@ -93,6 +98,30 @@ public class Consultation {
 
     public void setHasVitals(Boolean hasVitals) {
         this.hasVitals = hasVitals;
+    }
+
+    public String getPatientName() {
+        return patientName;
+    }
+
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
+    }
+
+    public String getPatientDob() {
+        return patientDob;
+    }
+
+    public void setPatientDob(String patientDob) {
+        this.patientDob = patientDob;
+    }
+
+    public String getPatientSex() {
+        return patientSex;
+    }
+
+    public void setPatientSex(String patientSex) {
+        this.patientSex = patientSex;
     }
 
     @Override
