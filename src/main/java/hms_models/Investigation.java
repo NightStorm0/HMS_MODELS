@@ -10,8 +10,6 @@ public class Investigation {
     private Integer id;
     private Integer consultationId;
     private Integer encounterId;
-    private String patientId;
-    private String doctorId;
     private String investigationType; // e.g., "Lab Test", "X-Ray", "MRI", "CT Scan", "Ultrasound"
     private String investigationName;
     private String description;
@@ -26,11 +24,10 @@ public class Investigation {
     public Investigation() {
     }
 
-    public Investigation(Integer consultationId, String patientId, String doctorId,
+    public Investigation(Integer consultationId,
             String investigationType, String investigationName, String priority) {
         this.consultationId = consultationId;
-        this.patientId = patientId;
-        this.doctorId = doctorId;
+
         this.investigationType = investigationType;
         this.investigationName = investigationName;
         this.priority = priority;
@@ -60,22 +57,6 @@ public class Investigation {
 
     public void setEncounterId(Integer encounterId) {
         this.encounterId = encounterId;
-    }
-
-    public String getPatientId() {
-        return patientId;
-    }
-
-    public void setPatientId(String patientId) {
-        this.patientId = patientId;
-    }
-
-    public String getDoctorId() {
-        return doctorId;
-    }
-
-    public void setDoctorId(String doctorId) {
-        this.doctorId = doctorId;
     }
 
     public String getInvestigationType() {
@@ -155,8 +136,7 @@ public class Investigation {
         return "Investigation{" +
                 "id=" + id +
                 ", consultationId=" + consultationId +
-                ", patientId='" + patientId + '\'' +
-                ", doctorId='" + doctorId + '\'' +
+                ", encounterId=" + encounterId +
                 ", investigationType='" + investigationType + '\'' +
                 ", investigationName='" + investigationName + '\'' +
                 ", status='" + status + '\'' +
