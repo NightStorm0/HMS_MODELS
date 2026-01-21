@@ -10,6 +10,7 @@ public class Investigation {
     private Integer id;
     private Integer consultationId;
     private Integer encounterId;
+    private Integer investigationId; // Reference to investigations catalog
     private String investigationType; // e.g., "Lab Test", "X-Ray", "MRI", "CT Scan", "Ultrasound"
     private String investigationName;
     private String description;
@@ -57,6 +58,14 @@ public class Investigation {
 
     public void setEncounterId(Integer encounterId) {
         this.encounterId = encounterId;
+    }
+
+    public Integer getInvestigationId() {
+        return investigationId;
+    }
+
+    public void setInvestigationId(Integer investigationId) {
+        this.investigationId = investigationId;
     }
 
     public String getInvestigationType() {
@@ -137,6 +146,7 @@ public class Investigation {
                 "id=" + id +
                 ", consultationId=" + consultationId +
                 ", encounterId=" + encounterId +
+                ", investigationId=" + investigationId +
                 ", investigationType='" + investigationType + '\'' +
                 ", investigationName='" + investigationName + '\'' +
                 ", status='" + status + '\'' +
