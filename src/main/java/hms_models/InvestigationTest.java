@@ -7,16 +7,16 @@ package hms_models;
  */
 public class InvestigationTest {
     private Integer id;
-    private String testCode; // Unique identifier (e.g., "CBC", "FBC-001")
-    private String testName; // Full name (e.g., "Complete Blood Count")
-    private String category; // Category (e.g., "Hematology", "Chemistry")
-    private String unit; // Unit of measurement (e.g., "mg/dL", "cells/μL")
-    private String normalRange; // Normal range (e.g., "4.5-11.0")
-    private Double price; // Cost of the test
-    private String sampleType; // Type of sample (e.g., "Blood", "Urine")
-    private String turnaroundTime; // Expected time (e.g., "2-4 hours", "24 hours")
-    private String description; // Additional details about the test
-    private Integer active; // 1 = active, 0 = inactive
+    private String testCode;
+    private String testName;
+    private String category;
+    private String unit;
+    private String normalRange;
+    private Double price;
+    private String sampleType;
+    private String turnaroundTime;
+    private String description;
+    private Integer active;
     private String createdAt;
     private String updatedAt;
 
@@ -36,7 +36,6 @@ public class InvestigationTest {
         this.active = 1;
     }
 
-    // Getters and Setters
     public Integer getId() {
         return id;
     }
