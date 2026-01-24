@@ -12,6 +12,7 @@ public class LabOrder {
     private Integer encounterId;
     private Integer investigationId; // Reference to investigations catalog
     private String patientId; // Added for new order creation
+    private String patientName; // Transient, populated via joins
     private String investigationType; // e.g., "Lab Test", "X-Ray", "MRI", "CT Scan", "Ultrasound"
     private String investigationName;
     private String description;
@@ -67,6 +68,14 @@ public class LabOrder {
 
     public void setPatientId(String patientId) {
         this.patientId = patientId;
+    }
+
+    public String getPatientName() {
+        return patientName;
+    }
+
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
     }
 
     public Integer getInvestigationId() {
