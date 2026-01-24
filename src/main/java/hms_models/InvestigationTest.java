@@ -3,7 +3,7 @@ package hms_models;
 /**
  * Model class representing a Laboratory Test in the investigations catalog.
  * This represents the master catalog of available tests that can be ordered,
- * not individual orders (which are represented by Investigation class).
+ * not individual orders (which are represented by LabOrder class).
  */
 public class InvestigationTest {
     private Integer id;

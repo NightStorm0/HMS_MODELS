@@ -6,11 +6,12 @@ package hms_models;
  * An investigation represents diagnostic tests or procedures ordered by a
  * doctor.
  */
-public class Investigation {
+public class LabOrder {
     private Integer id;
     private Integer consultationId;
     private Integer encounterId;
     private Integer investigationId; // Reference to investigations catalog
+    private String patientId; // Added for new order creation
     private String investigationType; // e.g., "Lab Test", "X-Ray", "MRI", "CT Scan", "Ultrasound"
     private String investigationName;
     private String description;
@@ -22,10 +23,10 @@ public class Investigation {
     private String notes;
 
     // Constructors
-    public Investigation() {
+    public LabOrder() {
     }
 
-    public Investigation(Integer consultationId,
+    public LabOrder(Integer consultationId,
             String investigationType, String investigationName, String priority) {
         this.consultationId = consultationId;
 
@@ -58,6 +59,14 @@ public class Investigation {
 
     public void setEncounterId(Integer encounterId) {
         this.encounterId = encounterId;
+    }
+
+    public String getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(String patientId) {
+        this.patientId = patientId;
     }
 
     public Integer getInvestigationId() {
@@ -142,7 +151,7 @@ public class Investigation {
 
     @Override
     public String toString() {
-        return "Investigation{" +
+        return "LabOrder{" +
                 "id=" + id +
                 ", consultationId=" + consultationId +
                 ", encounterId=" + encounterId +
