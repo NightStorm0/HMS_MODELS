@@ -1,5 +1,7 @@
 package hms_models;
 
+import java.util.List;
+
 /**
  * Model class representing a Medical Investigation/Lab Order in the Hospital
  * Management System.
@@ -19,9 +21,13 @@ public class LabOrder {
     private String orderDate;
     private String status; // e.g., "Pending", "In Progress", "Completed", "Cancelled"
     private String priority; // e.g., "Routine", "Urgent", "Emergency"
+    @Deprecated // Use resultComponents instead
     private String result;
     private String resultDate;
     private String notes;
+    
+    // Transient field - populated on demand
+    private List<LabResultComponent> resultComponents;
 
     // Constructors
     public LabOrder() {
@@ -156,6 +162,14 @@ public class LabOrder {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public List<LabResultComponent> getResultComponents() {
+        return resultComponents;
+    }
+
+    public void setResultComponents(List<LabResultComponent> resultComponents) {
+        this.resultComponents = resultComponents;
     }
 
     @Override

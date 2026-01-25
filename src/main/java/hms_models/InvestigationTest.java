@@ -1,5 +1,7 @@
 package hms_models;
 
+import java.util.List;
+
 /**
  * Model class representing a Laboratory Test in the investigations catalog.
  * This represents the master catalog of available tests that can be ordered,
@@ -16,13 +18,18 @@ public class InvestigationTest {
     private String sampleType;
     private String turnaroundTime;
     private String description;
+    private Integer hasComponents;  // 0 = simple test, 1 = multi-component test
     private Integer active;
     private String createdAt;
     private String updatedAt;
+    
+    // Transient field - populated on demand
+    private List<InvestigationComponent> components;
 
     // Constructors
     public InvestigationTest() {
         this.active = 1; // Default to active
+        this.hasComponents = 0; // Default to simple test
     }
 
     public InvestigationTest(String testCode, String testName, String category,
@@ -34,6 +41,7 @@ public class InvestigationTest {
         this.normalRange = normalRange;
         this.price = price;
         this.active = 1;
+        this.hasComponents = 0;
     }
 
     public Integer getId() {
@@ -140,9 +148,29 @@ public class InvestigationTest {
         this.updatedAt = updatedAt;
     }
 
+    public Integer getHasComponents() {
+        return hasComponents;
+    }
+
+    public void setHasComponents(Integer hasComponents) {
+        this.hasComponents = hasComponents;
+    }
+
+    public List<InvestigationComponent> getComponents() {
+        return components;
+    }
+
+    public void setComponents(List<InvestigationComponent> components) {
+        this.components = components;
+    }
+
     // Utility methods
     public boolean isActive() {
         return active != null && active == 1;
+    }
+
+    public boolean hasComponents() {
+        return hasComponents != null && hasComponents == 1;
     }
 
     @Override
