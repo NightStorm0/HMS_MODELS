@@ -9,39 +9,46 @@ import java.util.List;
  */
 public class InvestigationTest {
     private Integer id;
+    private String investigationId; // NEW: INV-XXX-XXX
     private String testCode;
     private String testName;
     private String category;
-    private String unit;
-    private String normalRange;
+    // private String unit; // DEPRECATED
+    // private String normalRange; // DEPRECATED
     private Double price;
     private String sampleType;
     private String turnaroundTime;
     private String description;
-    private Integer hasComponents;  // 0 = simple test, 1 = multi-component test
+    // private Integer hasComponents; // DEPRECATED: All tests now have at least 1
+    // component
     private Integer active;
     private String createdAt;
     private String updatedAt;
-    
+
     // Transient field - populated on demand
     private List<InvestigationComponent> components;
 
     // Constructors
     public InvestigationTest() {
         this.active = 1; // Default to active
-        this.hasComponents = 0; // Default to simple test
+        // this.hasComponents = 0; // DEPRECATED
     }
 
     public InvestigationTest(String testCode, String testName, String category,
-            String unit, String normalRange, Double price) {
+            Double price) {
         this.testCode = testCode;
         this.testName = testName;
         this.category = category;
-        this.unit = unit;
-        this.normalRange = normalRange;
         this.price = price;
         this.active = 1;
-        this.hasComponents = 0;
+    }
+
+    public String getInvestigationId() {
+        return investigationId;
+    }
+
+    public void setInvestigationId(String investigationId) {
+        this.investigationId = investigationId;
     }
 
     public Integer getId() {
@@ -76,21 +83,7 @@ public class InvestigationTest {
         this.category = category;
     }
 
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
-
-    public String getNormalRange() {
-        return normalRange;
-    }
-
-    public void setNormalRange(String normalRange) {
-        this.normalRange = normalRange;
-    }
+    // Deprecated fields removed from getter/setter
 
     public Double getPrice() {
         return price;
@@ -148,14 +141,6 @@ public class InvestigationTest {
         this.updatedAt = updatedAt;
     }
 
-    public Integer getHasComponents() {
-        return hasComponents;
-    }
-
-    public void setHasComponents(Integer hasComponents) {
-        this.hasComponents = hasComponents;
-    }
-
     public List<InvestigationComponent> getComponents() {
         return components;
     }
@@ -170,7 +155,8 @@ public class InvestigationTest {
     }
 
     public boolean hasComponents() {
-        return hasComponents != null && hasComponents == 1;
+        // return hasComponents != null && hasComponents == 1;
+        return true; // All tests now have at least 1 component
     }
 
     @Override

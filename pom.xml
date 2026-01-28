@@ -8,6 +8,9 @@
     <artifactId>hms-models</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
+
+    <!-- This is a comment. -->
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
