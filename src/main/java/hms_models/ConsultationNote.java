@@ -12,10 +12,11 @@ public class ConsultationNote {
     private String actionBy;
 
     // Constructors
-    public ConsultationNote() {}
+    public ConsultationNote() {
+    }
 
-    public ConsultationNote(Integer encounterId, String title, String chiefComplaint, 
-                           String historyOfPresentIllness, String assessment, String plan) {
+    public ConsultationNote(Integer encounterId, String title, String chiefComplaint,
+            String historyOfPresentIllness, String assessment, String plan) {
         this.encounterId = encounterId;
         this.title = title;
         this.chiefComplaint = chiefComplaint;
@@ -97,6 +98,16 @@ public class ConsultationNote {
         this.actionBy = actionBy;
     }
 
+    private java.util.List<Vitals> vitals;
+
+    public java.util.List<Vitals> getVitals() {
+        return vitals;
+    }
+
+    public void setVitals(java.util.List<Vitals> vitals) {
+        this.vitals = vitals;
+    }
+
     @Override
     public String toString() {
         return "ConsultationNote{" +
@@ -109,6 +120,7 @@ public class ConsultationNote {
                 ", plan='" + plan + '\'' +
                 ", createdAt='" + createdAt + '\'' +
                 ", actionBy='" + actionBy + '\'' +
+                ", vitals=" + vitals +
                 '}';
     }
 }
