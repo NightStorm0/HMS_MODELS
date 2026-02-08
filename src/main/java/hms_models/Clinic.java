@@ -11,6 +11,7 @@ public class Clinic {
     private String clinicName;
     private String description;
     private String status; // e.g., "Active", "Inactive"
+    private Integer departmentId;
     private String createdDate;
     private String updatedDate;
 
@@ -55,6 +56,14 @@ public class Clinic {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Integer getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(Integer departmentId) {
+        this.departmentId = departmentId;
     }
 
     public String getCreatedDate() {

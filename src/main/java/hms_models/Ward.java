@@ -6,18 +6,25 @@ package hms_models;
 public class Ward {
     private Integer id;
     private String wardName;
-    private String wardType;     // medical, surgical, ICU, maternity
+    private String wardType; // medical, surgical, ICU, maternity
     private Integer totalBeds;
+    private Integer departmentId;
     private String createdAt;
 
     public Ward() {
     }
 
     public Ward(Integer id, String wardName, String wardType, Integer totalBeds, String createdAt) {
+        this(id, wardName, wardType, totalBeds, null, createdAt);
+    }
+
+    public Ward(Integer id, String wardName, String wardType, Integer totalBeds, Integer departmentId,
+            String createdAt) {
         this.id = id;
         this.wardName = wardName;
         this.wardType = wardType;
         this.totalBeds = totalBeds;
+        this.departmentId = departmentId;
         this.createdAt = createdAt;
     }
 
@@ -51,6 +58,14 @@ public class Ward {
 
     public void setTotalBeds(Integer totalBeds) {
         this.totalBeds = totalBeds;
+    }
+
+    public Integer getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(Integer departmentId) {
+        this.departmentId = departmentId;
     }
 
     public String getCreatedAt() {
