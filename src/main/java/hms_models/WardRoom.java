@@ -7,16 +7,16 @@ public class WardRoom {
     private Integer id;
     private Integer wardId;
     private String roomNumber;
-    private String roomType;    // general, private, ICU, isolation
+    private Integer numberOfBeds;
 
     public WardRoom() {
     }
 
-    public WardRoom(Integer id, Integer wardId, String roomNumber, String roomType) {
+    public WardRoom(Integer id, Integer wardId, String roomNumber, Integer numberOfBeds) {
         this.id = id;
         this.wardId = wardId;
         this.roomNumber = roomNumber;
-        this.roomType = roomType;
+        this.numberOfBeds = numberOfBeds;
     }
 
     public Integer getId() {
@@ -43,11 +43,11 @@ public class WardRoom {
         this.roomNumber = roomNumber;
     }
 
-    public String getRoomType() {
-        return roomType;
+    public Integer getNumberOfBeds() {
+        return numberOfBeds;
     }
 
-    public void setRoomType(String roomType) {
-        this.roomType = roomType;
+    public void setNumberOfBeds(Integer numberOfBeds) {
+        this.numberOfBeds = numberOfBeds;
     }
 }

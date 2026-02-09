@@ -7,23 +7,23 @@ public class Ward {
     private Integer id;
     private String wardName;
     private String wardType; // medical, surgical, ICU, maternity
-    private Integer totalBeds;
+    private Integer totalRooms;
     private Integer departmentId;
     private String createdAt;
 
     public Ward() {
     }
 
-    public Ward(Integer id, String wardName, String wardType, Integer totalBeds, String createdAt) {
-        this(id, wardName, wardType, totalBeds, null, createdAt);
+    public Ward(Integer id, String wardName, String wardType, Integer totalRooms, String createdAt) {
+        this(id, wardName, wardType, totalRooms, null, createdAt);
     }
 
-    public Ward(Integer id, String wardName, String wardType, Integer totalBeds, Integer departmentId,
+    public Ward(Integer id, String wardName, String wardType, Integer totalRooms, Integer departmentId,
             String createdAt) {
         this.id = id;
         this.wardName = wardName;
         this.wardType = wardType;
-        this.totalBeds = totalBeds;
+        this.totalRooms = totalRooms;
         this.departmentId = departmentId;
         this.createdAt = createdAt;
     }
@@ -52,12 +52,12 @@ public class Ward {
         this.wardType = wardType;
     }
 
-    public Integer getTotalBeds() {
-        return totalBeds;
+    public Integer getTotalRooms() {
+        return totalRooms;
     }
 
-    public void setTotalBeds(Integer totalBeds) {
-        this.totalBeds = totalBeds;
+    public void setTotalRooms(Integer totalRooms) {
+        this.totalRooms = totalRooms;
     }
 
     public Integer getDepartmentId() {
