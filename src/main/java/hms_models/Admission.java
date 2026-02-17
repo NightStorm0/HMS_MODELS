@@ -10,12 +10,13 @@ public class Admission {
     private Integer wardId;
     private Integer roomId;
     private Integer bedId;
+    private Integer encounterId;
     private String admissionDate;
     private String dischargeDate;
-    private String admissionType;       // emergency, elective, transfer
+    private String admissionType; // emergency, elective, transfer
     private String provisionalDiagnosis;
     private Integer acuityLevel;
-    private String status;              // active, discharged, transferred, deceased
+    private String status; // active, discharged, transferred, deceased
     private String createdAt;
     private String actionBy;
 
@@ -23,15 +24,16 @@ public class Admission {
     }
 
     public Admission(Integer id, String patientId, Integer admittingDoctorId, Integer wardId,
-                     Integer roomId, Integer bedId, String admissionDate, String dischargeDate,
-                     String admissionType, String provisionalDiagnosis, Integer acuityLevel,
-                     String status, String createdAt) {
+            Integer roomId, Integer bedId, String admissionDate, String dischargeDate,
+            String admissionType, String provisionalDiagnosis, Integer acuityLevel,
+            String status, String createdAt) {
         this.id = id;
         this.patientId = patientId;
         this.admittingDoctorId = admittingDoctorId;
         this.wardId = wardId;
         this.roomId = roomId;
         this.bedId = bedId;
+        this.encounterId = null; // Default null for older constructors
         this.admissionDate = admissionDate;
         this.dischargeDate = dischargeDate;
         this.admissionType = admissionType;
@@ -87,6 +89,14 @@ public class Admission {
 
     public void setBedId(Integer bedId) {
         this.bedId = bedId;
+    }
+
+    public Integer getEncounterId() {
+        return encounterId;
+    }
+
+    public void setEncounterId(Integer encounterId) {
+        this.encounterId = encounterId;
     }
 
     public String getAdmissionDate() {
