@@ -7,15 +7,19 @@ public class WardNote {
     private Integer id;
     private Integer admissionId;
     private Integer authorId;
-    private String noteType;    // doctor's note, nursing note, progress note
+    private String noteType; // doctor's note, nursing note, progress note
     private String content;
     private String createdAt;
+
+    // Joined fields from users table
+    private String authorName;
+    private String authorRole;
 
     public WardNote() {
     }
 
-    public WardNote(Integer id, Integer admissionId, Integer authorId, String noteType, 
-                    String content, String createdAt) {
+    public WardNote(Integer id, Integer admissionId, Integer authorId, String noteType,
+            String content, String createdAt) {
         this.id = id;
         this.admissionId = admissionId;
         this.authorId = authorId;
@@ -70,5 +74,21 @@ public class WardNote {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
+
+    public String getAuthorRole() {
+        return authorRole;
+    }
+
+    public void setAuthorRole(String authorRole) {
+        this.authorRole = authorRole;
     }
 }
