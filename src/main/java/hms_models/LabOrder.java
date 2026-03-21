@@ -25,7 +25,8 @@ public class LabOrder {
     private String result;
     private String resultDate;
     private String notes;
-    
+    private String actionBy;
+
     // Transient field - populated on demand
     private List<LabResultComponent> resultComponents;
 
@@ -162,6 +163,14 @@ public class LabOrder {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public String getActionBy() {
+        return actionBy;
+    }
+
+    public void setActionBy(String actionBy) {
+        this.actionBy = actionBy;
     }
 
     public List<LabResultComponent> getResultComponents() {
