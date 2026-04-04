@@ -11,6 +11,15 @@ public class ConsultationNote {
     private String createdAt;
     private String actionBy;
 
+    // Transient fields — populated via JOIN at query time, not stored in DB
+    /** The name of the clinic where this note was written. */
+    private String sourceClinicName;
+    /**
+     * The visibility setting of the source clinic: "PUBLIC" or "PRIVATE".
+     * Defaults to "PUBLIC" if the clinic cannot be determined.
+     */
+    private String clinicNoteVisibility;
+
     // Constructors
     public ConsultationNote() {
     }
@@ -98,6 +107,22 @@ public class ConsultationNote {
         this.actionBy = actionBy;
     }
 
+    public String getSourceClinicName() {
+        return sourceClinicName;
+    }
+
+    public void setSourceClinicName(String sourceClinicName) {
+        this.sourceClinicName = sourceClinicName;
+    }
+
+    public String getClinicNoteVisibility() {
+        return clinicNoteVisibility;
+    }
+
+    public void setClinicNoteVisibility(String clinicNoteVisibility) {
+        this.clinicNoteVisibility = clinicNoteVisibility;
+    }
+
     private java.util.List<Vitals> vitals;
 
     public java.util.List<Vitals> getVitals() {
@@ -120,6 +145,8 @@ public class ConsultationNote {
                 ", plan='" + plan + '\'' +
                 ", createdAt='" + createdAt + '\'' +
                 ", actionBy='" + actionBy + '\'' +
+                ", sourceClinicName='" + sourceClinicName + '\'' +
+                ", clinicNoteVisibility='" + clinicNoteVisibility + '\'' +
                 ", vitals=" + vitals +
                 '}';
     }

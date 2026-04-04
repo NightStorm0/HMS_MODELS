@@ -14,6 +14,13 @@ public class Clinic {
     private Integer departmentId;
     private String createdDate;
     private String updatedDate;
+    /**
+     * Controls note visibility across clinic contexts.
+     * "PUBLIC"  — consultation notes are visible from any clinic (default).
+     * "PRIVATE" — consultation notes are siloed; only visible when the patient
+     *             is being seen in this same clinic.
+     */
+    private String noteVisibility;
 
     // Constructors
     public Clinic() {
@@ -82,6 +89,14 @@ public class Clinic {
         this.updatedDate = updatedDate;
     }
 
+    public String getNoteVisibility() {
+        return noteVisibility;
+    }
+
+    public void setNoteVisibility(String noteVisibility) {
+        this.noteVisibility = noteVisibility;
+    }
+
     @Override
     public String toString() {
         return "Clinic{" +
@@ -89,6 +104,7 @@ public class Clinic {
                 ", clinicName='" + clinicName + '\'' +
                 ", description='" + description + '\'' +
                 ", status='" + status + '\'' +
+                ", noteVisibility='" + noteVisibility + '\'' +
                 ", createdDate='" + createdDate + '\'' +
                 ", updatedDate='" + updatedDate + '\'' +
                 '}';

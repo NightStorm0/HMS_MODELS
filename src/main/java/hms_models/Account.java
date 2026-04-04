@@ -1,5 +1,7 @@
 package hms_models;
 
+
+
 public class Account {
     public enum AccountType {
         ADMIN,
