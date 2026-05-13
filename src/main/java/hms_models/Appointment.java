@@ -10,8 +10,14 @@ public class Appointment {
     private Integer doctorId; // foreign key to doctor/user
     private String reason; // reason for appointment
     private String appointmentDateTime; // date and time of appointment
-    private String status; // scheduled, completed, cancelled, no-show
+    private String status; // scheduled, completed, cancelled, no-show, checked_in, in_consultation
     private String createdAt;
+    private String cancelledReason;
+    private String noShowReason;
+    private String markedNoShowAt;
+    private String checkedInAt;
+    private String inConsultationAt;
+    private String completedAt;
 
     public Appointment() {
     }
@@ -90,5 +96,53 @@ public class Appointment {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getCancelledReason() {
+        return cancelledReason;
+    }
+
+    public void setCancelledReason(String cancelledReason) {
+        this.cancelledReason = cancelledReason;
+    }
+
+    public String getNoShowReason() {
+        return noShowReason;
+    }
+
+    public void setNoShowReason(String noShowReason) {
+        this.noShowReason = noShowReason;
+    }
+
+    public String getMarkedNoShowAt() {
+        return markedNoShowAt;
+    }
+
+    public void setMarkedNoShowAt(String markedNoShowAt) {
+        this.markedNoShowAt = markedNoShowAt;
+    }
+
+    public String getCheckedInAt() {
+        return checkedInAt;
+    }
+
+    public void setCheckedInAt(String checkedInAt) {
+        this.checkedInAt = checkedInAt;
+    }
+
+    public String getInConsultationAt() {
+        return inConsultationAt;
+    }
+
+    public void setInConsultationAt(String inConsultationAt) {
+        this.inConsultationAt = inConsultationAt;
+    }
+
+    public String getCompletedAt() {
+        return completedAt;
+    }
+
+    public void setCompletedAt(String completedAt) {
+        this.completedAt = completedAt;
     }
 }

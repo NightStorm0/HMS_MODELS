@@ -29,6 +29,8 @@ public class Patient {
     private String cardId;
     private String createdAt;
     private String actionBy;
+    private boolean deleted = false;
+    private String deletedAt;
 
     // Constructors
     public Patient() {}
@@ -225,6 +227,22 @@ public class Patient {
 
     public void setActionBy(String actionBy) {
         this.actionBy = actionBy;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
+    }
+
+    public String getDeletedAt() {
+        return deletedAt;
+    }
+
+    public void setDeletedAt(String deletedAt) {
+        this.deletedAt = deletedAt;
     }
 
     @Override
